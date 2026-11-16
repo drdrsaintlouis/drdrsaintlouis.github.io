@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Direction Régionale du Développement Rural de Saint-Louis - Ministère de l'Agriculture, de la Souveraineté Alimentaire et de l'Élevage">
+<title>DRDR Saint-Louis | Ministère de l'Agriculture, de la Souveraineté Alimentaire et de l'Élevage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============ VARIABLES & RESET ============ */
+:root{
+  --vert-fonce:#1B5E20;
+  --vert:#2E7D32;
+  --vert-clair:#4CAF50;
+  --ocre:#D97706;
+  --ocre-clair:#F59E0B;
+  --bleu:#0284C7;
+  --bleu-clair:#38BDF8;
+  --fond:#F8FAFC;
+  --blanc:#FFFFFF;
+  --texte:#1E293B;
+  --texte-clair:#475569;
+  --bordure:#E2E8F0;
+  --ombre:0 4px 6px -1px rgba(0,0,0,.08), 0 2px 4px -2px rgba(0,0,0,.05);
+  --ombre-forte:0 20px 25px -5px rgba(0,0,0,.1), 0 8px 10px -6px rgba(0,0,0,.05);
+  --radius:10px;
+  --transition:all .25s ease;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--fond);
+  color:var(--texte);
+  line-height:1.6;
+  min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{max-width:1280px;margin:0 auto;padding:0 1.5rem}
+
+/* ============ BANDEAU SUPÉRIEUR RÉPUBLIQUE ============ */
+.top-bar{
+  background:linear-gradient(90deg,var(--vert-fonce) 0%,var(--vert) 100%);
+  color:#fff;
+  font-size:.82rem;
+  padding:.5rem 0;
+  border-bottom:3px solid var(--ocre);
+}
+.top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.top-bar .flags{display:flex;align-items:center;gap:.75rem;font-weight:500}
+.top-bar .flags span{display:flex;align-items:center;gap:.4rem}
+.top-bar .flags .dot{width:8px;height:8px;border-radius:50%;background:var(--ocre)}
+.top-bar .links{display:flex;gap:1.25rem}
+.top-bar .links a{opacity:.9;transition:var(--transition)}
+.top-bar .links a:hover{opacity:1;color:var(--ocre-clair)}
+
+/* ============ HEADER / LOGOS ============ */
+.main-header{
+  background:var(--blanc);
+  padding:1.25rem 0;
+  border-bottom:1px solid var(--bordure);
+  box-shadow:var(--ombre);
+}
+.header-content{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.logos{display:flex;align-items:center;gap:1.25rem}
+.logo-block{display:flex;align-items:center;gap:.75rem}
+.logo-circle{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:.7rem;text-align:center;
+  color:#fff;line-height:1.1;padding:.25rem;
+  flex-shrink:0;
+  box-shadow:var(--ombre);
+}
+.logo-rep{background:linear-gradient(135deg,#00853F 33%,#FDEF42 33% 66%,#EF3340 66%)}
+.logo-masae{background:linear-gradient(135deg,var(--vert-fonce),var(--vert))}
+.logo-drdr{background:linear-gradient(135deg,var(--bleu),var(--bleu-clair))}
+.logo-text{display:flex;flex-direction:column;font-size:.78rem;line-height:1.25}
+.logo-text strong{font-size:.95rem;color:var(--vert-fonce)}
+.logo-text span{color:var(--texte-clair)}
+.header-right{display:flex;align-items:center;gap:1rem}
+.search-mini{
+  display:flex;align-items:center;background:var(--fond);
+  border:1px solid var(--bordure);border-radius:50px;
+  padding:.4rem .8rem;gap:.5rem;
+}
+.search-mini input{border:none;background:transparent;outline:none;font-size:.85rem;width:180px}
+.btn-lang{
+  background:var(--fond);border:1px solid var(--bordure);
+  padding:.4rem .8rem;border-radius:50px;font-size:.8rem;
+  font-weight:600;color:var(--texte-clair);transition:var(--transition);
+}
+.btn-lang:hover{background:var(--vert);color:#fff;border-color:var(--vert)}
+
+/* ============ NAVIGATION ============ */
+.main-nav{
+  background:var(--blanc);
+  border-bottom:2px solid var(--vert);
+  position:sticky;top:0;z-index:100;
+  box-shadow:var(--ombre);
+}
+.nav-list{display:flex;list-style:none;gap:0;flex-wrap:wrap}
+.nav-item{position:relative}
+.nav-link{
+  display:flex;align-items:center;gap:.35rem;
+  padding:1rem 1.25rem;
+  font-weight:500;font-size:.92rem;
+  color:var(--texte);
+  border-bottom:3px solid transparent;
+  transition:var(--transition);
+  cursor:pointer;
+  white-space:nowrap;
+}
+.nav-link:hover,.nav-link.active{
+  color:var(--vert-fonce);
+  border-bottom-color:var(--ocre);
+  background:var(--fond);
+}
+.nav-link .arrow{font-size:.7rem;transition:transform .25s}
+.nav-item:hover .arrow{transform:rotate(180deg)}
+.dropdown{
+  position:absolute;top:100%;left:0;
+  background:var(--blanc);
+  min-width:260px;
+  box-shadow:var(--ombre-forte);
+  border-top:3px solid var(--ocre);
+  border-radius:0 0 var(--radius) var(--radius);
+  opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:var(--transition);
+  list-style:none;
+  z-index:99;
+}
+.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{
+  opacity:1;visibility:visible;transform:translateY(0);
+}
+.dropdown li a{
+  display:block;padding:.75rem 1.25rem;
+  font-size:.88rem;color:var(--texte);
+  border-bottom:1px solid var(--bordure);
+  transition:var(--transition);
+}
+.dropdown li:last-child a{border-bottom:none}
+.dropdown li a:hover{
+  background:var(--fond);
+  color:var(--vert-fonce);
+  padding-left:1.5rem;
+}
+.menu-toggle{
+  display:none;
+  padding:.5rem 1rem;
+  font-size:1.5rem;
+  color:var(--vert-fonce);
+}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;
+  background:
+    linear-gradient(135deg,rgba(27,94,32,.92) 0%,rgba(2,132,199,.85) 100%),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231B5E20" width="1200" height="600"/><g opacity=".15"><circle cx="200" cy="300" r="150" fill="%23fff"/><circle cx="900" cy="200" r="200" fill="%23fff"/><circle cx="600" cy="500" r="180" fill="%23fff"/></g></svg>');
+  background-size:cover;
+  color:#fff;
+  padding:5rem 0 6rem;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 80% 20%,rgba(217,119,6,.25),transparent 50%);
+}
+.hero-content{position:relative;z-index:2;max-width:800px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(255,255,255,.15);backdrop-filter:blur(10px);
+  padding:.4rem 1rem;border-radius:50px;
+  font-size:.82rem;font-weight:500;margin-bottom:1.5rem;
+  border:1px solid rgba(255,255,255,.25);
+}
+.hero h1{
+  font-size:clamp(2rem,4.5vw,3.5rem);
+  font-weight:800;line-height:1.15;
+  margin-bottom:1.25rem;
+  letter-spacing:-.02em;
+}
+.hero h1 span{color:var(--ocre-clair)}
+.hero p{
+  font-size:1.15rem;
+  opacity:.95;margin-bottom:2rem;
+  max-width:650px;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.85rem 1.75rem;
+  border-radius:50px;
+  font-weight:600;font-size:.95rem;
+  transition:var(--transition);
+  border:2px solid transparent;
+}
+.btn-primary{background:var(--ocre);color:#fff}
+.btn-primary:hover{background:var(--ocre-clair);transform:translateY(-2px);box-shadow:var(--ombre-forte)}
+.btn-outline{background:transparent;color:#fff;border-color:#fff}
+.btn-outline:hover{background:#fff;color:var(--vert-fonce)}
+.btn-green{background:var(--vert);color:#fff}
+.btn-green:hover{background:var(--vert-fonce);transform:translateY(-2px)}
+
+/* ============ SECTIONS ============ */
+section{padding:4rem 0}
+.section-header{text-align:center;margin-bottom:3rem}
+.section-tag{
+  display:inline-block;
+  background:rgba(46,125,50,.1);color:var(--vert-fonce);
+  padding:.3rem 1rem;border-radius:50px;
+  font-size:.78rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.05em;
+  margin-bottom:.75rem;
+}
+.section-header h2{
+  font-size:clamp(1.75rem,3vw,2.5rem);
+  font-weight:700;color:var(--vert-fonce);
+  margin-bottom:.75rem;
+}
+.section-header p{color:var(--texte-clair);max-width:700px;margin:0 auto;font-size:1.05rem}
+
+/* ============ MOT DE LA DIRECTION ============ */
+.director-section{background:var(--blanc)}
+.director-grid{
+  display:grid;grid-template-columns:300px 1fr;
+  gap:3rem;align-items:center;
+}
+.director-photo{
+  aspect-ratio:1;border-radius:var(--radius);
+  background:linear-gradient(135deg,var(--vert),var(--bleu));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:5rem;font-weight:800;
+  box-shadow:var(--ombre-forte);
+  position:relative;
+}
+.director-photo::after{
+  content:"";position:absolute;inset:-10px;
+  border:3px solid var(--ocre);border-radius:var(--radius);
+  z-index:-1;
+}
+.director-info h3{color:var(--vert-fonce);font-size:1.5rem;margin-bottom:.25rem}
+.director-info .title{color:var(--ocre);font-weight:600;margin-bottom:1rem;font-size:.95rem}
+.director-info p{color:var(--texte-clair);margin-bottom:1rem}
+.director-signature{font-style:italic;color:var(--vert-fonce);font-weight:600;margin-top:1.5rem}
+
+/* ============ MISSIONS ============ */
+.missions-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.75rem;
+}
+.mission-card{
+  background:var(--blanc);
+  padding:2rem;border-radius:var(--radius);
+  border:1px solid var(--bordure);
+  transition:var(--transition);
+  position:relative;overflow:hidden;
+}
+.mission-card::before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:4px;
+  background:linear-gradient(90deg,var(--vert),var(--ocre));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .4s ease;
+}
+.mission-card:hover{transform:translateY(-5px);box-shadow:var(--ombre-forte)}
+.mission-card:hover::before{transform:scaleX(1)}
+.mission-icon{
+  width:60px;height:60px;border-radius:12px;
+  background:linear-gradient(135deg,var(--vert),var(--vert-clair));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:1.75rem;margin-bottom:1.25rem;
+}
+.mission-card h3{color:var(--vert-fonce);margin-bottom:.75rem;font-size:1.2rem}
+.mission-card p{color:var(--texte-clair);font-size:.95rem}
+
+/* ============ CHIFFRES CLÉS ============ */
+.stats-section{
+  background:linear-gradient(135deg,var(--vert-fonce) 0%,var(--vert) 50%,var(--bleu) 100%);
+  color:#fff;
+}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:2rem;text-align:center;
+}
+.stat-item{padding:1rem}
+.stat-number{
+  font-size:clamp(2.5rem,5vw,3.5rem);
+  font-weight:800;color:var(--ocre-clair);
+  line-height:1;margin-bottom:.5rem;
+}
+.stat-label{font-size:1rem;opacity:.95;font-weight:500}
+.stat-sub{font-size:.85rem;opacity:.75;margin-top:.25rem}
+
+/* ============ DÉPARTEMENTS APERÇU ============ */
+.departments-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:1.5rem;
+}
+.dept-card{
+  background:var(--blanc);border-radius:var(--radius);
+  overflow:hidden;border:1px solid var(--bordure);
+  transition:var(--transition);cursor:pointer;
+}
+.dept-card:hover{transform:translateY(-5px);box-shadow:var(--ombre-forte)}
+.dept-header{
+  padding:1.5rem;color:#fff;
+  position:relative;
+}
+.dept-header.dagana{background:linear-gradient(135deg,#1B5E20,#4CAF50)}
+.dept-header.podor{background:linear-gradient(135deg,#0284C7,#38BDF8)}
+.dept-header.saintlouis{background:linear-gradient(135deg,#D97706,#F59E0B)}
+.dept-header h3{font-size:1.5rem;margin-bottom:.25rem}
+.dept-header span{font-size:.85rem;opacity:.9}
+.dept-body{padding:1.5rem}
+.dept-body ul{list-style:none;margin-bottom:1.25rem}
+.dept-body li{
+  padding:.5rem 0;border-bottom:1px dashed var(--bordure);
+  display:flex;justify-content:space-between;
+  font-size:.9rem;
+}
+.dept-body li:last-child{border-bottom:none}
+.dept-body li strong{color:var(--vert-fonce)}
+.dept-link{
+  display:inline-flex;align-items:center;gap:.5rem;
+  color:var(--vert-fonce);font-weight:600;font-size:.9rem;
+}
+.dept-link:hover{color:var(--ocre)}
+
+/* ============ PAGE GÉNÉRIQUE ============ */
+.page-hero{
+  background:linear-gradient(135deg,var(--vert-fonce),var(--vert));
+  color:#fff;padding:3rem 0;
+  position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 90% 10%,rgba(217,119,6,.3),transparent 50%);
+}
+.page-hero .container{position:relative;z-index:2}
+.breadcrumb{font-size:.85rem;opacity:.85;margin-bottom:.75rem}
+.breadcrumb a:hover{color:var(--ocre-clair)}
+.page-hero h1{font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700}
+.page-hero p{margin-top:.5rem;opacity:.9;max-width:700px}
+
+.page-content{padding:3rem 0}
+.content-card{
+  background:var(--blanc);
+  border-radius:var(--radius);
+  padding:2rem;
+  border:1px solid var(--bordure);
+  margin-bottom:1.5rem;
+  box-shadow:var(--ombre);
+}
+.content-card h2{color:var(--vert-fonce);margin-bottom:1rem;font-size:1.5rem}
+.content-card h3{color:var(--vert);margin:1.5rem 0 .75rem;font-size:1.2rem}
+.content-card p{color:var(--texte-clair);margin-bottom:1rem}
+.content-card ul,.content-card ol{margin-left:1.5rem;color:var(--texte-clair);margin-bottom:1rem}
+.content-card li{margin-bottom:.5rem}
+
+/* ============ TABS (COOPÉRATIVES) ============ */
+.tabs{
+  display:flex;flex-wrap:wrap;gap:.25rem;
+  border-bottom:2px solid var(--bordure);
+  margin-bottom:2rem;
+  overflow-x:auto;
+}
+.tab-btn{
+  padding:.85rem 1.25rem;
+  font-weight:500;font-size:.9rem;
+  color:var(--texte-clair);
+  border-bottom:3px solid transparent;
+  margin-bottom:-2px;
+  transition:var(--transition);
+  white-space:nowrap;
+  display:flex;align-items:center;gap:.4rem;
+}
+.tab-btn:hover{color:var(--vert-fonce)}
+.tab-btn.active{
+  color:var(--vert-fonce);
+  border-bottom-color:var(--ocre);
+  background:var(--fond);
+}
+.tab-content{display:none;animation:fadeIn .3s ease}
+.tab-content.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* Encadré chiffres */
+.info-box{
+  background:linear-gradient(135deg,rgba(46,125,50,.08),rgba(2,132,199,.08));
+  border-left:4px solid var(--vert);
+  padding:1.25rem 1.5rem;border-radius:var(--radius);
+  margin:1.5rem 0;
+}
+.info-box h4{color:var(--vert-fonce);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+.info-box ul{list-style:none;margin:0}
+.info-box li{
+  padding:.4rem 0;display:flex;justify-content:space-between;
+  border-bottom:1px dashed var(--bordure);
+}
+.info-box li:last-child{border-bottom:none}
+.info-box li strong{color:var(--vert-fonce)}
+
+/* Cartes coopératives */
+.coop-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:1.25rem;margin-top:1.5rem;
+}
+.coop-card{
+  background:var(--blanc);
+  border:1px solid var(--bordure);
+  border-radius:var(--radius);
+  padding:1.25rem;
+  transition:var(--transition);
+}
+.coop-card:hover{border-color:var(--vert);box-shadow:var(--ombre)}
+.coop-card h4{color:var(--vert-fonce);margin-bottom:.75rem;font-size:1.05rem}
+.coop-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
+.coop-tag{
+  background:var(--fond);
+  padding:.25rem .6rem;border-radius:50px;
+  font-size:.75rem;color:var(--texte-clair);
+  border:1px solid var(--bordure);
+}
+.coop-tag.year{background:rgba(217,119,6,.1);color:var(--ocre);border-color:var(--ocre)}
+
+/* Boutons téléchargement */
+.download-list{display:grid;gap:.75rem;margin-top:1rem}
+.download-item{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.25rem;
+  background:var(--fond);border:1px solid var(--bordure);
+  border-radius:var(--radius);
+  transition:var(--transition);
+}
+.download-item:hover{border-color:var(--vert);background:var(--blanc)}
+.download-info{display:flex;align-items:center;gap:1rem}
+.download-icon{
+  width:42px;height:42px;border-radius:8px;
+  background:linear-gradient(135deg,#EF4444,#DC2626);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.75rem;flex-shrink:0;
+}
+.download-info strong{display:block;color:var(--texte);font-size:.95rem}
+.download-info small{color:var(--texte-clair);font-size:.8rem}
+.btn-dl{
+  background:var(--vert);color:#fff;
+  padding:.5rem 1rem;border-radius:50px;
+  font-size:.85rem;font-weight:500;
+  transition:var(--transition);
+}
+.btn-dl:hover{background:var(--vert-fonce)}
+
+/* Recherche nom */
+.search-box{
+  background:var(--fond);padding:2rem;border-radius:var(--radius);
+  border:1px solid var(--bordure);margin:1.5rem 0;
+}
+.search-input-wrap{
+  display:flex;gap:.75rem;margin-bottom:1rem;flex-wrap:wrap;
+}
+.search-input-wrap input{
+  flex:1;min-width:250px;
+  padding:.85rem 1.25rem;
+  border:2px solid var(--bordure);
+  border-radius:50px;font-size:1rem;
+  font-family:inherit;outline:none;
+  transition:var(--transition);
+}
+.search-input-wrap input:focus{border-color:var(--vert)}
+.search-input-wrap button{
+  padding:.85rem 1.75rem;
+  background:var(--vert);color:#fff;
+  border-radius:50px;font-weight:600;
+  transition:var(--transition);
+}
+.search-input-wrap button:hover{background:var(--vert-fonce)}
+.search-result{
+  padding:1rem 1.25rem;border-radius:var(--radius);
+  margin-top:1rem;display:none;
+}
+.search-result.show{display:block;animation:fadeIn .3s}
+.search-result.available{background:rgba(46,125,50,.1);border:1px solid var(--vert);color:var(--vert-fonce)}
+.search-result.taken{background:rgba(239,68,68,.1);border:1px solid #EF4444;color:#DC2626}
+
+/* ============ CAMPAGNES AGRICOLES ============ */
+.campaign-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.25rem;margin:1.5rem 0;
+}
+.campaign-card{
+  background:var(--blanc);
+  border:1px solid var(--bordure);
+  border-radius:var(--radius);
+  padding:1.5rem;
+  position:relative;overflow:hidden;
+}
+.campaign-card::before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:4px;
+  background:linear-gradient(90deg,var(--vert),var(--ocre));
+}
+.campaign-card h4{color:var(--vert-fonce);margin-bottom:.5rem}
+.campaign-card .dept{font-size:.85rem;color:var(--texte-clair);margin-bottom:1rem}
+.progress-bar{
+  height:8px;background:var(--bordure);
+  border-radius:50px;overflow:hidden;margin:.5rem 0;
+}
+.progress-fill{
+  height:100%;background:linear-gradient(90deg,var(--vert),var(--ocre));
+  border-radius:50px;transition:width 1s ease;
+}
+.campaign-stats{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:.75rem;margin-top:1rem;
+}
+.campaign-stat{
+  background:var(--fond);padding:.75rem;
+  border-radius:8px;text-align:center;
+}
+.campaign-stat strong{display:block;color:var(--vert-fonce);font-size:1.25rem}
+.campaign-stat span{font-size:.75rem;color:var(--texte-clair)}
+
+/* Tableaux */
+.data-table{
+  width:100%;border-collapse:collapse;
+  background:var(--blanc);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--ombre);
+  margin:1.5rem 0;
+}
+.data-table thead{background:linear-gradient(135deg,var(--vert-fonce),var(--vert));color:#fff}
+.data-table th{padding:1rem;text-align:left;font-weight:600;font-size:.9rem}
+.data-table td{padding:.85rem 1rem;border-bottom:1px solid var(--bordure);font-size:.9rem}
+.data-table tbody tr:hover{background:var(--fond)}
+.data-table tbody tr:last-child td{border-bottom:none}
+.status{
+  display:inline-block;padding:.2rem .6rem;
+  border-radius:50px;font-size:.75rem;font-weight:600;
+}
+.status.ok{background:rgba(46,125,50,.15);color:var(--vert-fonce)}
+.status.warn{background:rgba(217,119,6,.15);color:var(--ocre)}
+.status.alert{background:rgba(239,68,68,.15);color:#DC2626}
+
+/* Alerte / Bulletin */
+.alert-box{
+  padding:1.25rem 1.5rem;border-radius:var(--radius);
+  margin:1.5rem 0;display:flex;gap:1rem;align-items:flex-start;
+}
+.alert-box.info{background:rgba(2,132,199,.1);border-left:4px solid var(--bleu);color:#075985}
+.alert-box.warning{background:rgba(217,119,6,.1);border-left:4px solid var(--ocre);color:#92400E}
+.alert-box.success{background:rgba(46,125,50,.1);border-left:4px solid var(--vert);color:var(--vert-fonce)}
+.alert-box strong{display:block;margin-bottom:.25rem}
+
+/* ============ FORMULAIRE CONTACT ============ */
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1.5fr;
+  gap:2rem;
+}
+.contact-info-card{
+  background:linear-gradient(135deg,var(--vert-fonce),var(--vert));
+  color:#fff;padding:2rem;border-radius:var(--radius);
+}
+.contact-info-card h3{margin-bottom:1.5rem;font-size:1.3rem}
+.contact-item{
+  display:flex;gap:1rem;margin-bottom:1.25rem;
+  padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,.15);
+}
+.contact-item:last-child{border-bottom:none}
+.contact-item-icon{
+  width:40px;height:40px;border-radius:8px;
+  background:rgba(255,255,255,.15);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:1.1rem;
+}
+.contact-item strong{display:block;margin-bottom:.2rem}
+.contact-item span{opacity:.9;font-size:.9rem}
+
+.form-group{margin-bottom:1.25rem}
+.form-group label{
+  display:block;margin-bottom:.4rem;
+  font-weight:500;font-size:.9rem;color:var(--texte);
+}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:.75rem 1rem;
+  border:2px solid var(--bordure);
+  border-radius:8px;font-family:inherit;font-size:.95rem;
+  outline:none;transition:var(--transition);
+  background:var(--blanc);
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+  border-color:var(--vert);
+}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-message{
+  padding:1rem;border-radius:8px;margin-top:1rem;
+  display:none;
+}
+.form-message.show{display:block;animation:fadeIn .3s}
+.form-message.success{background:rgba(46,125,50,.1);color:var(--vert-fonce);border:1px solid var(--vert)}
+
+/* ============ FOOTER ============ */
+.main-footer{
+  background:linear-gradient(135deg,#0F172A,#1E293B);
+  color:#CBD5E1;padding:3.5rem 0 0;
+  margin-top:4rem;
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;
+  gap:2.5rem;margin-bottom:2.5rem;
+}
+.footer-col h4{
+  color:#fff;font-size:1rem;margin-bottom:1.25rem;
+  padding-bottom:.75rem;border-bottom:2px solid var(--ocre);
+  display:inline-block;
+}
+.footer-col p,.footer-col li{font-size:.9rem;line-height:1.7;margin-bottom:.5rem}
+.footer-col ul{list-style:none}
+.footer-col a{transition:var(--transition);display:inline-block}
+.footer-col a:hover{color:var(--ocre-clair);padding-left:.3rem}
+.footer-brand .logo-text{color:#fff}
+.footer-brand .logo-text strong{color:#fff}
+.footer-brand .logo-text span{color:#94A3B8}
+.footer-social{display:flex;gap:.75rem;margin-top:1rem}
+.footer-social a{
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;transition:var(--transition);
+}
+.footer-social a:hover{background:var(--ocre);transform:translateY(-3px)}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  padding:1.5rem 0;text-align:center;
+  font-size:.85rem;color:#94A3B8;
+}
+.footer-bottom strong{color:var(--ocre-clair)}
+
+/* ============ UTILITAIRES ============ */
+.hidden{display:none!important}
+.text-center{text-align:center}
+.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mt-3{margin-top:3rem}
+.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:968px){
+  .director-grid{grid-template-columns:1fr;text-align:center}
+  .director-photo{max-width:250px;margin:0 auto}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .menu-toggle{display:block}
+  .nav-list{
+    display:none;flex-direction:column;width:100%;
+    background:var(--blanc);
+  }
+  .nav-list.open{display:flex}
+  .nav-link{padding:.85rem 1.25rem;border-bottom:1px solid var(--bordure);justify-content:space-between}
+  .dropdown{
+    position:static;opacity:1;visibility:visible;transform:none;
+    box-shadow:none;border-top:none;border-left:3px solid var(--ocre);
+    display:none;
+  }
+  .nav-item.open .dropdown{display:block}
+  .header-right{display:none}
+  .hero{padding:3rem 0 4rem}
+  .footer-grid{grid-template-columns:1fr}
+  section{padding:3rem 0}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ BANDEAU SUPÉRIEUR ============ -->
+<div class="top-bar">
+  <div class="container">
+    <div class="flags">
+      <span><span class="dot"></span> République du Sénégal</span>
+      <span>🇸🇳 Un Peuple - Un But - Une Foi</span>
+    </div>
+    <div class="links">
+      <a href="#" data-route="contact">Contact</a>
+      <a href="#" data-route="ressources">Espace presse</a>
+      <a href="#">Plan du site</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="main-header">
+  <div class="container header-content">
+    <div class="logos">
+      <div class="logo-block">
+        <div class="logo-circle logo-rep">RÉP. DU SÉNÉGAL</div>
+      </div>
+      <div class="logo-block">
+        <div class="logo-circle logo-masae">MASAE</div>
+        <div class="logo-text">
+          <strong>Ministère de l'Agriculture</strong>
+          <span>de la Souveraineté Alimentaire et de l'Élevage</span>
+        </div>
+      </div>
+      <div class="logo-block">
+        <div class="logo-circle logo-drdr">DRDR</div>
+        <div class="logo-text">
+          <strong>DRDR Saint-Louis</strong>
+          <span>Direction Régionale du Développement Rural</span>
+        </div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="search-mini">
+        <span>🔍</span>
+        <input type="text" placeholder="Rechercher...">
+      </div>
+      <button class="btn-lang">FR | EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="main-nav">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <ul class="nav-list" id="navList">
+      <li class="nav-item"><a class="nav-link" data-route="accueil">🏠 Accueil</a></li>
+      <li class="nav-item">
+        <a class="nav-link" data-route="drdr">DRDR <span class="arrow">▾</span></a>
+        <ul class="dropdown">
+          <li><a data-route="drdr-present">Présentation</a></li>
+          <li><a data-route="drdr-missions">Missions & Objectifs</a></li>
+          <li><a data-route="drdr-org">Organisation & SDDR</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-route="coop-dagana">Coopérative <span class="arrow">▾</span></a>
+        <ul class="dropdown">
+          <li><a data-route="coop-dagana">Dagana</a></li>
+          <li><a data-route="coop-podor">Podor</a></li>
+          <li><a data-route="coop-saintlouis">Saint-Louis</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-route="campagne-hivernage">Suivi de Campagne Agricole <span class="arrow">▾</span></a>
+        <ul class="dropdown">
+          <li><a data-route="campagne-hivernage">Campagne Hivernage 2026</a></li>
+          <li><a data-route="campagne-ssd">Campagne Saison Sèche Chaude 2026</a></li>
+          <li><a data-route="campagne-ssf">Campagne Saison Sèche Froide 2025-2026</a></li>
+          <li><a data-route="campagne-biometrie">Biométrie</a></li>
+          <li><a data-route="campagne-materiel">Programme Matériel</a></li>
+          <li><a data-route="campagne-phyto">Situation Phytosanitaire</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a class="nav-link" data-route="programmes">Programmes & Projets</a></li>
+      <li class="nav-item"><a class="nav-link" data-route="ressources">Ressources & Documents</a></li>
+      <li class="nav-item"><a class="nav-link" data-route="contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ CONTENEUR PRINCIPAL (SPA) ============ -->
+<main id="app"></main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="logo-block" style="margin-bottom:1rem">
+          <div class="logo-circle logo-drdr">DRDR</div>
+          <div class="logo-text">
+            <strong>DRDR Saint-Louis</strong>
+            <span>Direction Régionale du Développement Rural</span>
+          </div>
+        </div>
+        <p>Acteur clé de la souveraineté alimentaire dans la Vallée du Fleuve Sénégal, la DRDR de Saint-Louis accompagne les producteurs, les coopératives et les territoires vers une agriculture durable et compétitive.</p>
+        <div class="footer-social">
+          <a href="#" title="Facebook">f</a>
+          <a href="#" title="Twitter">𝕏</a>
+          <a href="#" title="LinkedIn">in</a>
+          <a href="#" title="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a data-route="accueil">Accueil</a></li>
+          <li><a data-route="drdr-present">Présentation</a></li>
+          <li><a data-route="coop-dagana">Coopératives</a></li>
+          <li><a data-route="campagne-hivernage">Suivi de campagnes</a></li>
+          <li><a data-route="programmes">Programmes & Projets</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a data-route="ressources">Documents officiels</a></li>
+          <li><a data-route="ressources">Rapports d'activités</a></li>
+          <li><a data-route="ressources">Publications</a></li>
+          <li><a data-route="contact">Nous contacter</a></li>
+          <li><a href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📍 Rue Félix Faure, Quartier Governail<br>B.P. 38 Saint-Louis, Sénégal</p>
+        <p>📞 +221 33 961 71 24</p>
+        <p>✉️ contact@drdr-saintlouis.sn</p>
+        <p>🕐 Lun - Ven : 08h00 - 17h00</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      © 2026 <strong>DRDR Saint-Louis</strong> — Ministère de l'Agriculture, de la Souveraineté Alimentaire et de l'Élevage. Tous droits réservés. | République du Sénégal
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   DONNÉES
+   ========================================================= */
+const DATA = {
+  cooperatives:{
+    dagana:{
+      nom:"Dagana",
+      intro:"Le département de Dagana, situé au cœur de la Vallée du Fleuve Sénégal, est un pôle agricole majeur de la région de Saint-Louis. Avec ses vastes périmètres irrigués et ses terroirs rizicoles historiques, il concentre une dynamique coopérative forte au service de la souveraineté alimentaire.",
+      chiffres:{cooperatives:47,membres:3850,secteurs:"Riziculture, Maraîchage, Élevage"},
+      cooperatives:[
+        {nom:"Coopérative agricole de Dagana",secteur:"Riziculture",commune:"Dagana",annee:2015},
+        {nom:"Coopérative des producteurs de Richard-Toll",secteur:"Riziculture & Maraîchage",commune:"Richard-Toll",annee:2012},
+        {nom:"Coopérative maraîchère de Ross Béthio",secteur:"Maraîchage",commune:"Ross Béthio",annee:2018},
+        {nom:"Coopérative d'élevage de Ndiouck",secteur:"Élevage",commune:"Ndiouck",annee:2016},
+        {nom:"Coopérative des femmes transformatrices de Mbane",secteur:"Transformation",commune:"Mbane",annee:2019},
+        {nom:"Coopérative céréalière de Diama",secteur:"Céréales",commune:"Diama",annee:2014}
+      ],
+      communes:["Dagana","Richard-Toll","Ross Béthio","Ndiouck","Mbane","Diama","Gaé","Cas-Cas"]
+    },
+    podor:{
+      nom:"Podor",
+      intro:"Le département de Podor, le plus vaste de la région de Saint-Louis, s'étend le long du Fleuve Sénégal jusqu'aux confins mauritaniens. Terre d'élevage pastoral et de culture irriguée, il abrite des coopératives dynamiques qui structurent la vie économique locale.",
+      chiffres:{cooperatives:39,membres:2980,secteurs:"Élevage, Riziculture, Cultures de contre-saison"},
+      cooperatives:[
+        {nom:"Coopérative agro-pastorale de Podor",secteur:"Agro-pastoralisme",commune:"Podor",annee:2013},
+        {nom:"Coopérative rizicole de Galoya",secteur:"Riziculture",commune:"Galoya",annee:2017},
+        {nom:"Coopérative des éleveurs de Dodel",secteur:"Élevage",commune:"Dodel",annee:2011},
+        {nom:"Coopérative maraîchère de Cas-Cas",secteur:"Maraîchage",commune:"Cas-Cas",annee:2020},
+        {nom:"Coopérative des productrices de Ngnith",secteur:"Transformation",commune:"Ngnith",annee:2019},
+        {nom:"Coopérative céréalière de Démet",secteur:"Céréales",commune:"Démet",annee:2015}
+      ],
+      communes:["Podor","Galoya","Dodel","Cas-Cas","Ngnith","Démet","Walaldé","Aéré Lao"]
+    },
+    saintlouis:{
+      nom:"Saint-Louis",
+      intro:"Le département de Saint-Louis, berceau historique de la ville éponyme, conjugue patrimoine, agriculture périurbaine et activités halieutiques. Ses coopératives bénéficient de la proximité des marchés de consommation et d'un écosystème institutionnel dense.",
+      chiffres:{cooperatives:52,membres:4120,secteurs:"Maraîchage, Horticulture, Pêche & Aquaculture"},
+      cooperatives:[
+        {nom:"Coopérative maraîchère de Rao",secteur:"Maraîchage",commune:"Rao",annee:2014},
+        {nom:"Coopérative horticole de Ndiongol",secteur:"Horticulture",commune:"Ndiongol",annee:2017},
+        {nom:"Coopérative des mareyeurs de Guet Ndar",secteur:"Pêche",commune:"Guet Ndar",annee:2010},
+        {nom:"Coopérative agricole de Fanaye",secteur:"Riziculture",commune:"Fanaye",annee:2016},
+        {nom:"Coopérative des femmes de Ndiébène Gandiole",secteur:"Transformation",commune:"Gandiole",annee:2018},
+        {nom:"Coopérative avicole de Mpal",secteur:"Aviculture",commune:"Mpal",annee:2021}
+      ],
+      communes:["Saint-Louis","Rao","Ndiongol","Guet Ndar","Fanaye","Gandiole","Mpal","Diama"]
+    }
+  },
+  campagnes:{
+    hivernage:{
+      titre:"Campagne Hivernage 2026",
+      periode:"Juin - Octobre 2026",
+      statut:"En cours",
+      statutClass:"ok",
+      description:"La campagne d'hivernage 2026 couvre les cultures pluviales (mil, sorgho, niébé, arachide) et la préparation des aménagements hydro-agricoles pour le riz. Le suivi s'effectue décade par décade dans les trois départements.",
+      alerte:{type:"info",titre:"Point pluviométrique",texte:"Cumul pluviométrique au 15 novembre 2026 : 542 mm à Saint-Louis, 487 mm à Dagana, 421 mm à Podor. Situation globalement favorable, avec un déficit ponctuel dans le nord du département de Podor."},
+      data:[
+        {dept:"Dagana",superficie:"18 450 ha",taux:"92%",rendement:"3,2 T/ha",statut:"ok",statutTxt:"Atteint"},
+        {dept:"Podor",superficie:"22 180 ha",taux:"87%",rendement:"2,8 T/ha",statut:"warn",statutTxt:"En cours"},
+        {dept:"Saint-Louis",superficie:"9 620 ha",taux:"95%",rendement:"3,5 T/ha",statut:"ok",statutTxt:"Atteint"}
+      ]
+    },
+    ssd:{
+      titre:"Campagne Saison Sèche Chaude 2026",
+      periode:"Mars - Juin 2026",
+      statut:"Clôturée",
+      statutClass:"ok",
+      description:"La saison sèche chaude 2026 a été marquée par une forte mobilisation des périmètres irrigués pour les cultures de riz, de maïs et de niébé de contre-saison, avec un recours accru à l'irrigation maîtrisée.",
+      alerte:{type:"success",titre:"Bilan positif",texte:"Bilan définitif : 34 250 ha emblavés, soit +8% par rapport à 2025. Rendement moyen riz irrigué : 6,8 T/ha."},
+      data:[
+        {dept:"Dagana",superficie:"12 350 ha",taux:"100%",rendement:"6,9 T/ha",statut:"ok",statutTxt:"Récolté"},
+        {dept:"Podor",superficie:"14 800 ha",taux:"98%",rendement:"6,5 T/ha",statut:"ok",statutTxt:"Récolté"},
+        {dept:"Saint-Louis",superficie:"7 100 ha",taux:"100%",rendement:"7,1 T/ha",statut:"ok",statutTxt:"Récolté"}
+      ]
+    },
+    ssf:{
+      titre:"Campagne Saison Sèche Froide 2025-2026",
+      periode:"Novembre 2025 - Février 2026",
+      statut:"Clôturée",
+      statutClass:"ok",
+      description:"La saison sèche froide 2025-2026 a été consacrée aux cultures maraîchères (oignon, tomate, chou, pomme de terre) et à la préparation des sols pour l'hivernage suivant.",
+      alerte:{type:"warning",titre:"Attention phytosanitaire",texte:"Pression observée sur les cultures d'oignon dans le département de Podor (mildiou). Traitement préventif recommandé dans les communes de Galoya et Dodel."},
+      data:[
+        {dept:"Dagana",superficie:"3 850 ha",taux:"100%",rendement:"18 T/ha",statut:"ok",statutTxt:"Récolté"},
+        {dept:"Podor",superficie:"4 220 ha",taux:"94%",rendement:"15 T/ha",statut:"warn",statutTxt:"Partiel"},
+        {dept:"Saint-Louis",superficie:"2 980 ha",taux:"100%",rendement:"22 T/ha",statut:"ok",statutTxt:"Récolté"}
+      ]
+    },
+    biometrie:{
+      titre:"Biométrie des Exploitants Agricoles",
+      periode:"Programme continu 2024-2026",
+      statut:"En déploiement",
+      statutClass:"warn",
+      description:"Le programme de biométrie vise à identifier et enrôler l'ensemble des exploitants agricoles de la région pour la délivrance de la Carte Nationale d'Exploitant Agricole (CNEA), condition d'accès aux intrants subventionnés et aux services de soutien.",
+      alerte:{type:"info",titre:"Objectif 2026",texte:"Enrôler 85 000 exploitants d'ici fin décembre 2026. 62 400 exploitants déjà biométrés au 15 novembre 2026."},
+      data:[
+        {dept:"Dagana",superficie:"28 500 enrôlés",taux:"78%",rendement:"—",statut:"warn",statutTxt:"En cours"},
+        {dept:"Podor",superficie:"19 200 enrôlés",taux:"71%",rendement:"—",statut:"warn",statutTxt:"En cours"},
+        {dept:"Saint-Louis",superficie:"14 700 enrôlés",taux:"82%",rendement:"—",statut:"ok",statutTxt:"Avancé"}
+      ]
+    },
+    materiel:{
+      titre:"Programme Matériel Agricole 2026",
+      periode:"Année culturale 2026",
+      statut:"En distribution",
+      statutClass:"ok",
+      description:"Le programme matériel 2026 porte sur la dotation en équipements agricoles (tracteurs, motopompes, semoirs, outils de récolte) au bénéfice des coopératives et groupements de producteurs, dans le cadre du Projet de Modernisation de l'Agriculture.",
+      alerte:{type:"success",titre:"Dotation 2026",texte:"120 tracteurs, 850 motopompes et 2 400 semoirs distribués aux coopératives des trois départements au titre de l'exercice 2026."},
+      data:[
+        {dept:"Dagana",superficie:"45 tracteurs / 320 motopompes",taux:"95%",rendement:"—",statut:"ok",statutTxt:"Distribué"},
+        {dept:"Podor",superficie:"40 tracteurs / 280 motopompes",taux:"88%",rendement:"—",statut:"warn",statutTxt:"En cours"},
+        {dept:"Saint-Louis",superficie:"35 tracteurs / 250 motopompes",taux:"100%",rendement:"—",statut:"ok",statutTxt:"Distribué"}
+      ]
+    },
+    phyto:{
+      titre:"Situation Phytosanitaire",
+      periode:"Bulletin hebdomadaire",
+      statut:"Vigilance modérée",
+      statutClass:"warn",
+      description:"La Direction de la Protection des Végétaux, en relais avec les services régionaux, assure la surveillance épidémiologique des cultures et la lutte contre les bioagresseurs (ravageurs, maladies adventices).",
+      alerte:{type:"warning",titre:"Bulletin n°42 — Semaine 46/2026",texte:"Présence signalée de chenilles légionnaires (Spodoptera frugiperda) sur maïs dans le département de Podor. Surveillance renforcée des cultures de riz (pyriculariose) à Dagana. Situations maîtrisées à Saint-Louis."},
+      data:[
+        {dept:"Dagana",superficie:"Riz : pyriculariose modérée",taux:"Niveau 2",rendement:"—",statut:"warn",statutTxt:"Surveillance"},
+        {dept:"Podor",superficie:"Maïs : chenilles légionnaires",taux:"Niveau 3",rendement:"—",statut:"alert",statutTxt:"Alerte"},
+        {dept:"Saint-Louis",superficie:"Maraîchage : situation stable",taux:"Niveau 1",rendement:"—",statut:"ok",statutTxt:"Maîtrisé"}
+      ]
+    }
+  }
+};
+
+/* =========================================================
+   TEMPLATES DE PAGES
+   ========================================================= */
+const pages = {
+
+  /* ---------- ACCUEIL ---------- */
+  accueil:()=>`
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-badge">🌾 Vallée du Fleuve Sénégal — Région de Saint-Louis</div>
+        <h1>Ensemble pour une <span>souveraineté alimentaire</span> durable</h1>
+        <p>La Direction Régionale du Développement Rural de Saint-Louis accompagne les producteurs, les coopératives et les territoires dans la mise en œuvre des politiques agricoles nationales, au service d'une agriculture résiliente et compétitive.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" data-route="drdr-present">Découvrir la DRDR →</a>
+          <a class="btn btn-outline" data-route="campagne-hivernage">Suivi des campagnes 2026</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="director-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Mot de la Direction</span>
+          <h2>Une ambition partagée pour le monde rural</h2>
+        </div>
+        <div class="director-grid">
+          <div class="director-photo">DR</div>
+          <div class="director-info">
+            <h3>Directeur Régional du Développement Rural</h3>
+            <div class="title">DRDR de Saint-Louis</div>
+            <p>« La région de Saint-Louis, traversée par le fleuve qui lui donne son nom, constitue un réservoir agricole stratégique pour le Sénégal. Notre mission, au sein de la DRDR, est de traduire concrètement les orientations du Ministère de l'Agriculture, de la Souveraineté Alimentaire et de l'Élevage sur le terrain, aux côtés des producteurs, des coopératives et des collectivités territoriales. »</p>
+            <p>« À travers le suivi des campagnes agricoles, l'appui à la structuration des organisations paysannes, la mise en œuvre des programmes d'équipement et la veille phytosanitaire, nous œuvrons chaque jour pour une agriculture plus productive, plus durable et plus inclusive. »</p>
+            <div class="director-signature">— La Direction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Nos missions</span>
+          <h2>Trois piliers au service du monde rural</h2>
+          <p>La DRDR de Saint-Louis déploie son action autour de trois axes stratégiques structurants pour le développement agricole régional.</p>
+        </div>
+        <div class="missions-grid">
+          <div class="mission-card">
+            <div class="mission-icon">🌾</div>
+            <h3>Conduite des campagnes agricoles</h3>
+            <p>Planification, suivi-évaluation et pilotage des campagnes d'hivernage, de saison sèche chaude et de saison sèche froide dans les trois départements de la région.</p>
+          </div>
+          <div class="mission-card">
+            <div class="mission-icon">🤝</div>
+            <h3>Appui aux organisations paysannes</h3>
+            <p>Accompagnement technique et juridique des coopératives agricoles, suivi de leur gouvernance, appui à la structuration de la vie coopérative dans l'espace OHADA.</p>
+          </div>
+          <div class="mission-card">
+            <div class="mission-icon">🛡️</div>
+            <h3>Veille sanitaire & programmes</h3>
+            <p>Surveillance phytosanitaire, biométrie des exploitants, distribution de matériel agricole et mise en œuvre des programmes nationaux et projets de développement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number" data-count="3">0</div>
+            <div class="stat-label">Départements couverts</div>
+            <div class="stat-sub">Dagana, Podor, Saint-Louis</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="138">0</div>
+            <div class="stat-label">Coopératives enregistrées</div>
+            <div class="stat-sub">Actives dans la région</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="52400">0</div>
+            <div class="stat-label">Hectares aménagés</div>
+            <div class="stat-sub">Périmètres irrigués & pluviaux</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="6">0</div>
+            <div class="stat-label">Filières phares</div>
+            <div class="stat-sub">Riz, Maraîchage, Élevage, Céréales, Horticulture, Pêche</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Nos départements</span>
+          <h2>Trois territoires, une même ambition</h2>
+          <p>La DRDR de Saint-Louis agit dans les trois départements de la région, à travers ses Services Départementaux du Développement Rural (SDDR).</p>
+        </div>
+        <div class="departments-grid">
+          <div class="dept-card" data-route="coop-dagana">
+            <div class="dept-header dagana">
+              <h3>Dagana</h3>
+              <span>Cœur rizicole de la vallée</span>
+            </div>
+            <div class="dept-body">
+              <ul>
+                <li>Coopératives <strong>47</strong></li>
+                <li>Membres actifs <strong>3 850</strong></li>
+                <li>Communes couvertes <strong>8</strong></li>
+              </ul>
+              <a class="dept-link">Voir le département →</a>
+            </div>
+          </div>
+          <div class="dept-card" data-route="coop-podor">
+            <div class="dept-header podor">
+              <h3>Podor</h3>
+              <span>Élevage & cultures irriguées</span>
+            </div>
+            <div class="dept-body">
+              <ul>
+                <li>Coopératives <strong>39</strong></li>
+                <li>Membres actifs <strong>2 980</strong></li>
+                <li>Communes couvertes <strong>8</strong></li>
+              </ul>
+              <a class="dept-link">Voir le département →</a>
+            </div>
+          </div>
+          <div class="dept-card" data-route="coop-saintlouis">
+            <div class="dept-header saintlouis">
+              <h3>Saint-Louis</h3>
+              <span>Agriculture périurbaine & halieutique</span>
+            </div>
+            <div class="dept-body">
+              <ul>
+                <li>Coopératives <strong>52</strong></li>
+                <li>Membres actifs <strong>4 120</strong></li>
+                <li>Communes couvertes <strong>8</strong></li>
+              </ul>
+              <a class="dept-link">Voir le département →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `,
+
+  /* ---------- DRDR - PRÉSENTATION ---------- */
+  "drdr-present":()=>`
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a data-route="accueil">Accueil</a> / DRDR / Présentation</div>
+        <h1>Présentation de la DRDR de Saint-Louis</h1>
+        <p>Un service déconcentré au cœur du développement rural régional</p>
+      </div>
+    </section>
+    <section class="page-content">
+      <div class="container">
+        <div class="content-card">
+          <h2>Qui sommes-nous ?</h2>
+          <p>La <strong>Direction Régionale du Développement Rural (DRDR) de Saint-Louis</strong> est un service déconcentré du <strong>Ministère de l'Agriculture, de la Souveraineté Alimentaire et de l'Élevage (MASAE)</strong>. Elle constitue le relais territorial des politiques publiques agricoles dans la région de Saint-Louis.</p>
+          <p>Elle intervient sur l'ensemble des trois départements de la région — <strong>Dagana, Podor et Saint-Louis</strong> — à travers ses Services Départementaux du Développement Rural (SDDR) et en coordination avec les collectivités territoriales, les organisations paysannes et les partenaires techniques et financiers.</p>
+          <h3>Notre positionnement institutionnel</h3>
+          <p>Placée sous l'autorité d'un Directeur Régional, la DRDR anime, coordonne et évalue les actions de développement rural dans la région. Elle travaille en étroite collaboration avec :</p>
+          <ul>
+            <li>La Direction de l'Agriculture (DA)</li>
+            <li>La Direction de l'Aménagement et de l'Exploitation des Vallées du Sénégal et de la Falémé (DAV)</li>
+            <li>L'Agence Nationale d'Insertion et de Développement Agricole (ANIDA)</li>
+            <li>La Société d'Aménagement et d'Exploitation des Terres du Delta du Fleuve Sénégal et des Vallées du Sénégal et de la Falémé (SAED)</li>
+            <li>L'Institut Sénégalais de Recherches Agricoles (ISRA)</li>
+            <li>Les Conseils Régionaux et Communaux de la région de Saint-Louis</li>
+          </ul>
+          <h3>Nos valeurs</h3>
+          <ul>
+            <li><strong>Proximité</strong> : un ancrage territorial fort au plus près des producteurs</li>
+            <li><strong>Intégrité</strong> : une gestion transparente des ressources publiques</li>
+            <li><strong>Excellence technique</strong> : un appui fondé sur la recherche et l'innovation</li>
+            <li><strong>Inclusion</strong> : une attention particulière aux femmes, aux jeunes et aux populations vulnérables</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  `,
+
+  /* ---------- DRDR - MISSIONS ---------- */
+  "drdr-missions":()=>`
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a data-route="accueil">Accueil</a> / DRDR / Missions & Objectifs</div>
+        <h1>Missions & Objectifs</h1>
+        <p>Les grandes orientations stratégiques de la DRDR</p>
+      </div>
+    </section>
+    <section class="page-content">
+      <div class="container">
+        <div class="content-card">
+          <h2>Nos missions réglementaires</h2>
+          <p>Conformément aux dispositions en vigueur, la DRDR de Saint-Louis est chargée de :</p>
+          <ol>
+            <li>Assurer la mise en œuvre, le suivi et l'évaluation des politiques nationales de développement rural dans la région</li>
+            <li>Piloter les campagnes agricoles (hivernage, saison sèche chaude, saison sèche froide)</li>
+            <li>Accompagner la structuration et le fonctionnement des organisations professionnelles agricoles (coopératives, groupements, interprofessions)</li>
+            <li>Garantir la veille phytosanitaire et la protection des végétaux</li>
+            <li>Mettre en œuvre les programmes nationaux d'équipement, de biométrie et de soutien aux exploitants</li>
+            <li>Coordonner l'action des Services Départementaux du Développement Rural (SDDR)</li>
+            <li>Produire et diffuser les statistiques agricoles régionales</li>
+          </ol>
+          <h2>Nos objectifs stratégiques 2024-2026</h2>
+          <ul>
+            <li><strong>Souveraineté alimentaire</strong> : accroître la production rizicole régionale de 15% d'ici 2026</li>
+            <li><strong>Structuration coopérative</strong> : atteindre 200 coopératives actives et conformes dans la région</li>
+            <li><strong>Modernisation</strong> : biométrer 100% des exploitants actifs d'ici fin 2026</li>
+            <li><strong>Résilience climatique</strong> : généraliser les pratiques agroécologiques sur 30% des superficies</li>
+            <li><strong>Inclusion</strong> : porter la part des femmes et des jeunes dans les instances coopératives à 40%</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  `,
+
+  /* ---------- DRDR - ORGANISATION ---------- */
+  "drdr-org":()=>`
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a data-route="accueil">Accueil</a> / DRDR / Organisation & SDDR</div>
+        <h1>Organisation & SDDR</h1>
+        <p>Architecture territoriale de la DRDR</p>
+      </div>
+    </section>
+    <section class="page-content">
+      <div class="container">
+        <div class="content-card">
+          <h2>Organisation de la DRDR</h2>
+          <p>La DRDR de Saint-Louis s'organise autour d'une direction régionale et de trois services départementaux :</p>
+          <h3>Direction Régionale</h3>
+          <ul>
+            <li><strong>Le Directeur Régional</strong> — pilotage stratégique et représentation</li>
+            <li><strong>Service des Études, de la Planification et du Suivi-Évaluation</strong></li>
+            <li><strong>Service de la Production Végétale et de la Sécurité Alimentaire</strong></li>
+            <li><strong>Service des Organisations Professionnelles et de l'Économie Rurale</strong></li>
+            <li><strong>Service de la Protection des Végétaux et de la Phytosanitaire</strong></li>
+            <li><strong>Service Administratif et Financier</strong></li>
+          </ul>
+          <h3>Services Départementaux du Développement Rural (SDDR)</h3>
+          <p>Chaque département dispose d'un SDDR, relais opérationnel de la DRDR sur le terrain :</p>
+          <div class="departments-grid" style="margin-top:1.5rem">
+            <div class="dept-card" data-route="coop-dagana">
+              <div class="dept-header dagana"><h3>SDDR Dagana</h3><span>Chef-lieu : Dagana</span></div>
+              <div class="dept-body"><p>Couvre 8 communes et 47 coopératives.</p><a class="dept-link">Accéder →</a></div>
+            </div>
+            <div class="dept-card" data-route="coop-podor">
+              <div class="dept-header podor"><h3>SDDR Podor</h3><span>Chef-lieu : Podor</span></div>
+              <div class="dept-body"><p>Couvre 8 communes et 39 coopératives.</p><a class="dept-link">Accéder →</a></div>
+            </div>
+            <div class="dept-card" data-route="coop-saintlouis">
+              <div class="dept-header saintlouis"><h3>SDDR Saint-Louis</h3><span>Chef-lieu : Saint-Louis</span></div>
+              <div class="dept-body"><p>Couvre 8 communes et 52 coopératives.</p><a class="dept-link">Accéder →</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `,
+
+  /* ---------- PAGES COOPÉRATIVES (GÉNÉRIQUE) ---------- */
+  "coop-dagana":()=>renderCoopPage("dagana"),
+  "coop-podor":()=>renderCoopPage("podor"),
+  "coop-saintlouis":()=>renderCoopPage("saintlouis"),
+
+  /* ---------- CAMPAGNES ---------- */
+  "campagne-hivernage":()=>renderCampagnePage("hivernage"),
+  "campagne-ssd":()=>renderCampagnePage("ssd"),
+  "campagne-ssf":()=>renderCampagnePage("ssf"),
+  "campagne-biometrie":()=>renderCampagnePage("biometrie"),
+  "campagne-materiel":()=>renderCampagnePage("materiel"),
+  "campagne-phyto":()=>renderCampagnePage("phyto"),
+
+  /* ---------- PROGRAMMES ---------- */
+  programmes:()=>`
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a data-route="accueil">Accueil</a> / Programmes & Projets</div>
+        <h1>Programmes & Projets</h1>
+        <p>Les programmes nationaux et projets structurants mis en œuvre dans la région</p>
+      </div>
+    </section>
+    <section class="page-content">
+      <div class="container">
+        <div class="content-card">
+          <h2>Programmes nationaux déployés</h2>
+          <div class="missions-grid">
+            <div class="mission-card">
+              <div class="mission-icon">🌾</div>
+              <h3>Programme d'Autosuffisance en Riz (PAR)</h3>
+              <p>Objectif : atteindre l'autosuffisance en riz à l'horizon 2027. Aménagement de nouveaux périmètres, appui à la mécanisation et structuration de la filière.</p>
+            </div>
+            <div class="mission-card">
+              <div class="mission-icon">💧</div>
+              <h3>PROCAS</h3>
+              <p>Projet de Compétitivité et de Sécurité Alimentaire — appui aux filières riz, maraîchage et élevage dans la Vallée du Fleuve Sénégal.</p>
+            </div>
+            <div class="mission-card">
+              <div class="mission-icon">🚜</div>
+              <h3>Programme de Mécanisation Agricole</h3>
+              <p>Dotation en tracteurs, motopompes et équipements de récolte au bénéfice des coopératives et groupements de producteurs.</p>
+            </div>
+            <div class="mission-card">
+              <div class="mission-icon">🆔</div>
+              <h3>Programme National de Biométrie</h3>
+              <p>Enrôlement biométrique des exploitants agricoles pour la délivrance de la Carte Nationale d'Exploitant Agricole (CNEA).</p>
+            </div>
+            <div class="mission-card">
+              <div class="mission-icon">🌱</div>
+              <h3>DER/FJ — Volet Agricole</h3>
+              <p>Financement des jeunes porteurs de projets agricoles et agropastoraux dans la région de Saint-Louis.</p>
+            </div>
+            <div class="mission-card">
+              <div class="mission-icon">🌍</div>
+              <h3>PRACAS</h3>
+              <p>Programme Résilience des Agro-Systèmes face aux Changements Climatiques — appui à l'agroécologie et à la gestion durable de l'eau.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `,
+
+  /* ---------- RESSOURCES ---------- */
+  ressources:()=>`
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a data-route="accueil">Accueil</a> / Ressources & Documents</div>
+        <h1>Ressources & Documents</h1>
+        <p>Publications, rapports et documents officiels de la DRDR</p>
+      </div>
+    </section>
+    <section class="page-content">
+      <div class="container">
+        <div class="content-card">
+          <h2>Rapports d'activités</h2>
+          <div class="download-list">
+            <div class="download-item">
+              <div class="download-info">
+                <div class="download-icon">PDF</div>
+                <div><strong>Rapport annuel d'activités 2025</strong><small>DRDR Saint-Louis — 4,2 Mo</small></div>
+              </div>
+              <button class="btn-dl" onclick="simulateDownload('Rapport_annuel_2025.pdf')">Télécharger</button>
+            </div>
+            <div class="download-item">
+              <div class="download-info">
+                <div class="download-icon">PDF</div>
+                <div><strong>Bilan de la campagne d'hivernage 2025</strong><small>Service Production Végétale — 2,8 Mo</small></div>
+              </div>
+              <button class="btn-dl" onclick="simulateDownload('Bilan_hivernage_2025.pdf')">Télécharger</button>
+            </div>
+            <div class="download-item">
+              <div class="download-info">
+                <div class="download-icon">PDF</div>
+                <div><strong>Statistiques agricoles régionales 2025</strong><small>SESE — 3,1 Mo</small></div>
+              </div>
+              <button class="btn-dl" onclick="simulateDownload('Statistiques_2025.pdf')">Télécharger</button>
+            </div>
+          </div>
+
+          <h2>Textes & documents de référence</h2>
+          <div class="download-list">
+            <div class="download-item">
+              <div class="download-info">
+                <div class="download-icon">PDF</div>
+                <div><strong>Acte Uniforme OHADA relatif au droit des sociétés coopératives</strong><small>OHADA — 1,4 Mo</small></div>
+              </div>
+              <button class="btn-dl" onclick="simulateDownload('AU_OHADA_cooperatives.pdf')">Télécharger</button>
+            </div>
+            <div class="download-item">
+              <div class="download-info">
+                <div class="download-icon">PDF</div>
+                <div><strong>Loi n° 84-13 du 12 février 1984 relative aux coopératives agricoles</strong><small>République du Sénégal — 820 Ko</small></div>
+              </div>
+              <button class="btn-dl" onclick="simulateDownload('Loi_cooperatives_1984.pdf')">Télécharger</button>
+            </div>
+            <div class="download-item">
+              <div class="download-info">
+                <div class="download-icon">PDF</div>
+                <div><strong>Letters of Agricultural Policy — Sénégal 2023-2027</strong><small>MASAE — 2,3 Mo</small></div>
+              </div>
+              <button class="btn-dl" onclick="simulateDownload('Lettre_Politique_Agricole.pdf')">Télécharger</button>
+            </div>
+          </div>
+
+          <h2>Publications & guides pratiques</h2>
+          <div class="download-list">
+            <div class="download-item">
+              <div class="download-info">
+                <div class="download-icon">PDF</div>
+                <div><strong>Guide de création d'une coopérative agricole au Sénégal</strong><small>DRDR Saint-Louis — 1,8 Mo</small></div>
+              </div>
+              <button class="btn-dl" onclick="simulateDownload('Guide_creation_cooperative.pdf')">Télécharger</button>
+            </div>
+            <div class="download-item">
+              <div class="download-info">
+                <div class="download-icon">PDF</div>
+                <div><strong>Itinéraires techniques — Riz irrigué dans la Vallée</strong><small>SAED / ISRA — 5,6 Mo</small></div>
+              </div>
+              <button class="btn-dl" onclick="simulateDownload('Itineraire_riz_irrigue.pdf')">Télécharger</button>
+            </div>
+            <div class="download-item">
+              <div class="download-info">
+                <div class="download-icon">PDF</div>
+                <div><strong>Bulletin phytosanitaire régional — Semaine 46/2026</strong><small>Service Protection des Végétaux — 980 Ko</small></div>
+              </div>
+              <button class="btn-dl" onclick="simulateDownload('Bulletin_phyto_S46_2026.pdf')">Télécharger</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `,
+
+  /* ---------- CONTACT ---------- */
+  contact:()=>`
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a data-route="accueil">Accueil</a> / Contact</div>
+        <h1>Contactez-nous</h1>
+        <p>Nos équipes sont à votre écoute pour toute question relative au développement rural dans la région</p>
+      </div>
+    </section>
+    <section class="page-content">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info-card">
+            <h3>Coordonnées</h3>
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div><strong>Adresse</strong><span>Rue Félix Faure, Quartier Governail<br>B.P. 38 Saint-Louis, Sénégal</span></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div><strong>Téléphone</strong><span>+221 33 961 71 24<br>+221 33 961 25 80</span></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">✉️</div>
+              <div><strong>Courriel</strong><span>contact@drdr-saintlouis.sn<br>direction@drdr-saintlouis.sn</span></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">🕐</div>
+              <div><strong>Horaires</strong><span>Lundi - Vendredi : 08h00 - 17h00<br>Samedi - Dimanche : fermé</span></div>
+            </div>
+          </div>
+          <div class="content-card">
+            <h2>Formulaire de contact</h2>
+            <p>Remplissez le formulaire ci-dessous. Nous vous répondrons dans les meilleurs délais.</p>
+            <form id="contactForm" onsubmit="return submitContact(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Nom complet *</label>
+                  <input type="text" required placeholder="Votre nom et prénom">
+                </div>
+                <div class="form-group">
+                  <label>Adresse électronique *</label>
+                  <input type="email" required placeholder="votre@email.com">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Téléphone</label>
+                  <input type="tel" placeholder="+221 7X XXX XX XX">
+                </div>
+                <div class="form-group">
+                  <label>Qualité *</label>
+                  <select required>
+                    <option value="">-- Sélectionner --</option>
+                    <option>Producteur / Exploitant</option>
+                    <option>Coopérative agricole</option>
+                    <option>Collectivité territoriale</option>
+                    <option>Partenaire technique / financier</option>
+                    <option>Presse / Média</option>
+                    <option>Particulier</option>
+                    <option>Autre</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Objet *</label>
+                <select required>
+                  <option value="">-- Sélectionner un objet --</option>
+                  <option>Création de coopérative</option>
+                  <option>Suivi de campagne agricole</option>
+                  <option>Programme matériel / équipements</option>
+                  <option>Biométrie / CNEA</option>
+                  <option>Question phytosanitaire</option>
+                  <option>Demande d'information générale</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Votre message *</label>
+                <textarea required placeholder="Décrivez votre demande..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-green">Envoyer le message →</button>
+              <div class="form-message success" id="formMsg">
+                ✓ Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  `
+};
+
+/* =========================================================
+   GÉNÉRATEURS DYNAMIQUES
+   ========================================================= */
+function renderCoopPage(deptKey){
+  const d = DATA.cooperatives[deptKey];
+  const tabs = [
+    {id:"presentation",label:"📋 Présentation"},
+    {id:"creation",label:"📝 Création"},
+    {id:"dossiers",label:"📥 Dossiers"},
+    {id:"recherche",label:"🔎 Recherche de nom"},
+    {id:"communes",label:"🏘️ Communes"},
+    {id:"gestion",label:"⚙️ Gestion"}
+  ];
+  return `
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a data-route="accueil">Accueil</a> / Coopérative / ${d.nom}</div>
+        <h1>Département de ${d.nom}</h1>
+        <p>Guichet coopératif du SDDR de ${d.nom} — Structuration, accompagnement et suivi des organisations paysannes</p>
+      </div>
+    </section>
+    <section class="page-content">
+      <div class="container">
+        <div class="content-card">
+          <h2>Bienvenue dans le département de ${d.nom}</h2>
+          <p>${d.intro}</p>
+
+          <div class="tabs" role="tablist">
+            ${tabs.map((t,i)=>`<button class="tab-btn ${i===0?'active':''}" data-tab="${t.id}">${t.label}</button>`).join('')}
+          </div>
+
+          <div class="tab-content active" id="tab-presentation">
+            <h3>Présentation générale</h3>
+            <p>Le département de ${d.nom} compte aujourd'hui <strong>${d.chiffres.cooperatives} coopératives enregistrées</strong> regroupant <strong>${d.chiffres.membres} membres actifs</strong>, principalement dans les secteurs suivants : <strong>${d.chiffres.secteurs}</strong>.</p>
+            <div class="info-box">
+              <h4>📊 Chiffres clés</h4>
+              <ul>
+                <li>Nombre de coopératives enregistrées <strong>${d.chiffres.cooperatives}</strong></li>
+                <li>Nombre de membres actifs <strong>${d.chiffres.membres.toLocaleString('fr-FR')}</strong></li>
+                <li>Principaux secteurs <strong>${d.chiffres.secteurs}</strong></li>
+              </ul>
+            </div>
+            <h3>Coopératives enregistrées</h3>
+            <div class="coop-grid">
+              ${d.cooperatives.map(c=>`
+                <div class="coop-card">
+                  <h4>${c.nom}</h4>
+                  <p style="font-size:.9rem;color:var(--texte-clair)">Secteur : ${c.secteur}</p>
+                  <div class="coop-meta">
+                    <span class="coop-tag">📍 ${c.commune}</span>
+                    <span class="coop-tag year">📅 Depuis ${c.annee}</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab-creation">
+            <h3>Étapes légales de création d'une coopérative agricole</h3>
+            <p>La création d'une coopérative agricole au Sénégal est régie par la <strong>Loi n° 84-13 du 12 février 1984</strong> et par l'<strong>Acte Uniforme OHADA relatif au droit des sociétés coopératives</strong> (AUSCO). Le processus comprend les étapes suivantes :</p>
+            <ol>
+              <li><strong>Étape 1 — Sensibilisation et formation</strong> : organisation de sessions de sensibilisation avec les producteurs intéressés et formation aux principes coopératifs (identité coopérative, 7 principes de l'ACI).</li>
+              <li><strong>Étape 2 — Comité provisoire</strong> : mise en place d'un comité provisoire chargé de l'élaboration des documents constitutifs (statuts, règlement intérieur, liste des membres fondateurs).</li>
+              <li><strong>Étape 3 — Assemblée Générale Constitutive (AGC)</strong> : adoption des statuts, élection du premier bureau exécutif, souscription du capital social.</li>
+              <li><strong>Étape 4 — Immatriculation au Registre des Coopératives</strong> : dépôt du dossier auprès du SDDR, puis transmission à la DRDR pour immatriculation et délivrance du récépissé.</li>
+              <li><strong>Étape 5 — Publication</strong> : insertion d'un avis au Journal Officiel et immatriculation au Registre du Commerce et du Crédit Mobilier (RCCM) le cas échéant.</li>
+              <li><strong>Étape 6 — Affiliation</strong> : affiliation à une faîtière départementale ou régionale (Fédérations, CNCR, etc.).</li>
+            </ol>
+            <div class="alert-box info">
+              <strong>📌 Délai moyen</strong>
+              <span>Comptez entre 30 et 60 jours entre le dépôt complet du dossier et la délivrance du récépissé définitif d'immatriculation.</span>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab-dossiers">
+            <h3>Modèles de documents téléchargeables</h3>
+            <p>Téléchargez ci-dessous les modèles officiels de documents nécessaires à la création et à l'immatriculation d'une coopérative agricole.</p>
+            <div class="download-list">
+              <div class="download-item">
+                <div class="download-info">
+                  <div class="download-icon">PDF</div>
+                  <div><strong>Modèle de statuts — Coopérative agricole</strong><small>Conforme à l'AUSCO — Version 2024 — 420 Ko</small></div>
+                </div>
+                <button class="btn-dl" onclick="simulateDownload('Modele_Statuts_${d.nom}.pdf')">Télécharger</button>
+              </div>
+              <div class="download-item">
+                <div class="download-info">
+                  <div class="download-icon">PDF</div>
+                  <div><strong>Modèle de PV d'Assemblée Générale Constitutive</strong><small>Procès-verbal type — 280 Ko</small></div>
+                </div>
+                <button class="btn-dl" onclick="simulateDownload('Modele_PV_AGC_${d.nom}.pdf')">Télécharger</button>
+              </div>
+              <div class="download-item">
+                <div class="download-info">
+                  <div class="download-icon">PDF</div>
+                  <div><strong>Fiche d'immatriculation au Registre des Coopératives</strong><small>Formulaire officiel — 180 Ko</small></div>
+                </div>
+                <button class="btn-dl" onclick="simulateDownload('Fiche_Immatriculation_${d.nom}.pdf')">Télécharger</button>
+              </div>
+              <div class="download-item">
+                <div class="download-info">
+                  <div class="download-icon">PDF</div>
+                  <div><strong>Liste des membres fondateurs — Modèle</strong><small>Tableau à compléter — 120 Ko</small></div>
+                </div>
+                <button class="btn-dl" onclick="simulateDownload('Liste_Membres_${d.nom}.pdf')">Télécharger</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab-recherche">
+            <h3>Test de disponibilité du nom coopératif</h3>
+            <p>Avant de déposer votre dossier, vérifiez la disponibilité du nom choisi pour votre coopérative. Ce test indicatif vous permet d'éviter les homonymies avec les coopératives déjà enregistrées dans le département de ${d.nom}.</p>
+            <div class="search-box">
+              <div class="search-input-wrap">
+                <input type="text" id="searchCoopName" placeholder="Ex : Coopérative maraîchère de..." oninput="checkCoopName('${deptKey}')">
+                <button onclick="checkCoopName('${deptKey}')">Vérifier</button>
+              </div>
+              <div class="search-result" id="searchResult"></div>
+            </div>
+            <div class="alert-box info">
+              <strong>💡 Conseil</strong>
+              <span>Choisissez un nom explicite, intégrant si possible la commune ou le secteur d'activité. Les noms génériques (« Coopérative des producteurs ») sont souvent déjà utilisés.</span>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab-communes">
+            <h3>Répartition des coopératives par commune</h3>
+            <p>Le département de ${d.nom} couvre <strong>${d.communes.length} communes</strong>. Voici la répartition territoriale des coopératives enregistrées.</p>
+            <table class="data-table">
+              <thead>
+                <tr><th>Commune</th><th>Coopératives actives</th><th>Principaux secteurs</th><th>Statut</th></tr>
+              </thead>
+              <tbody>
+                ${d.communes.map((c,i)=>`
+                  <tr>
+                    <td><strong>${c}</strong></td>
+                    <td>${Math.max(3,Math.round(d.chiffres.cooperatives/d.communes.length + (i%3)-1))}</td>
+                    <td>${d.chiffres.secteurs.split(', ')[i%d.chiffres.secteurs.split(', ').length]}</td>
+                    <td><span class="status ok">Active</span></td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tab-content" id="tab-gestion">
+            <h3>Espace de gestion coopérative</h3>
+            <p>Cet espace est dédié au suivi de la vie coopérative : dépôt des procès-verbaux d'Assemblée Générale Ordinaire (AGO), renouvellement des bureaux exécutifs et mise à jour statutaire.</p>
+            <h3>📄 Dépôt de PV d'AGO</h3>
+            <p>Toute coopérative doit transmettre au SDDR une copie du PV de son Assemblée Générale Ordinaire annuelle dans un délai de <strong>30 jours</strong> suivant sa tenue.</p>
+            <div class="download-list">
+              <div class="download-item">
+                <div class="download-info">
+                  <div class="download-icon">PDF</div>
+                  <div><strong>Formulaire de dépôt de PV d'AGO</strong><small>À remplir et à transmettre au SDDR — 150 Ko</small></div>
+                </div>
+                <button class="btn-dl" onclick="simulateDownload('Formulaire_PV_AGO_${d.nom}.pdf')">Télécharger</button>
+              </div>
+            </div>
+            <h3>🔄 Renouvellement des bureaux</h3>
+            <p>Les bureaux exécutifs des coopératives sont élus pour une durée de <strong>3 ans</strong>, renouvelable une fois. Tout renouvellement doit faire l'objet d'une déclaration au SDDR accompagné du PV d'AG portant élection.</p>
+            <h3>📝 Mise à jour statutaire</h3>
+            <p>Toute modification des statuts (objet, siège, capital, etc.) doit être notifiée au SDDR et donner lieu à un avenant immatriculé au Registre des Coopératives.</p>
+            <div class="alert-box warning">
+              <strong>⚠️ Obligation légale</strong>
+              <span>Le non-dépôt du PV d'AGO ou du renouvellement du bureau dans les délais peut entraîner la suspension des avantages fiscaux et l'inéligibilité aux programmes d'appui.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderCampagnePage(key){
+  const c = DATA.campagnes[key];
+  return `
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a data-route="accueil">Accueil</a> / Suivi de Campagne Agricole / ${c.titre}</div>
+        <h1>${c.titre}</h1>
+        <p>${c.periode} — <span class="status ${c.statutClass}" style="background:rgba(255,255,255,.2);color:#fff;padding:.3rem .8rem">${c.statut}</span></p>
+      </div>
+    </section>
+    <section class="page-content">
+      <div class="container">
+        <div class="content-card">
+          <h2>Présentation</h2>
+          <p>${c.description}</p>
+          <div class="alert-box ${c.alerte.type}">
+            <div>
+              <strong>${c.alerte.titre}</strong>
+              <span>${c.alerte.texte}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h2>Indicateurs par département</h2>
+          <table class="data-table">
+            <thead>
+              <tr><th>Département</th><th>Superficies / Effectifs</th><th>Taux de réalisation</th><th>Rendement moyen</th><th>Statut</th></tr>
+            </thead>
+            <tbody>
+              ${c.data.map(d=>`
+                <tr>
+                  <td><strong>${d.dept}</strong></td>
+                  <td>${d.superficie}</td>
+                  <td>
+                    <div style="display:flex;align-items:center;gap:.75rem">
+                      <div class="progress-bar" style="flex:1"><div class="progress-fill" style="width:${d.taux}"></div></div>
+                      <strong style="color:var(--vert-fonce)">${d.taux}</strong>
+                    </div>
+                  </td>
+                  <td>${d.rendement}</td>
+                  <td><span class="status ${d.statut}">${d.statutTxt}</span></td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="content-card">
+          <h2>Cartographie des réalisations</h2>
+          <div class="campaign-grid">
+            ${c.data.map(d=>`
+              <div class="campaign-card">
+                <h4>${d.dept}</h4>
+                <div class="dept">Département — ${c.titre}</div>
+                <div class="progress-bar"><div class="progress-fill" style="width:${d.taux}"></div></div>
+                <small style="color:var(--texte-clair)">Taux de réalisation : ${d.taux}</small>
+                <div class="campaign-stats">
+                  <div class="campaign-stat"><strong>${d.superficie.split(' ')[0]}</strong><span>${d.superficie.split(' ').slice(1).join(' ')||'Réalisé'}</span></div>
+                  <div class="campaign-stat"><strong>${d.rendement}</strong><span>Rendement</span></div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h2>📥 Documents de la campagne</h2>
+          <div class="download-list">
+            <div class="download-item">
+              <div class="download-info">
+                <div class="download-icon">PDF</div>
+                <div><strong>Note de cadrage — ${c.titre}</strong><small>DRDR Saint-Louis — 1,2 Mo</small></div>
+              </div>
+              <button class="btn-dl" onclick="simulateDownload('Cadrage_${key}.pdf')">Télécharger</button>
+            </div>
+            <div class="download-item">
+              <div class="download-info">
+                <div class="download-icon">PDF</div>
+                <div><strong>Bulletin d'information n°1</strong><small>SESE DRDR — 780 Ko</small></div>
+              </div>
+              <button class="btn-dl" onclick="simulateDownload('Bulletin_${key}_1.pdf')">Télécharger</button>
+            </div>
+            <div class="download-item">
+              <div class="download-info">
+                <div class="download-icon">PDF</div>
+                <div><strong>Tableaux de bord départementaux</strong><small>Données consolidées — 2,4 Mo</small></div>
+              </div>
+              <button class="btn-dl" onclick="simulateDownload('TBD_${key}.pdf')">Télécharger</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* =========================================================
+   ROUTEUR SPA
+   ========================================================= */
+const app = document.getElementById('app');
+
+function navigate(route){
+  if(!route || !pages[route]) route = 'accueil';
+  const html = pages[route]();
+  app.innerHTML = html;
+  window.scrollTo({top:0,behavior:'smooth'});
+
+  // Active nav
+  document.querySelectorAll('.nav-link').forEach(l=>{
+    l.classList.toggle('active', l.dataset.route===route || (l.dataset.route && route.startsWith(l.dataset.route)));
+  });
+
+  // Tabs
+  initTabs();
+  // Compteurs animés
+  animateCounters();
+  // Historique
+  history.replaceState(null,'','#'+route);
+  // Rebind data-route
+  bindRoutes();
+}
+
+function bindRoutes(){
+  document.querySelectorAll('[data-route]').forEach(el=>{
+    el.onclick = (e)=>{
+      e.preventDefault();
+      navigate(el.dataset.route);
+      // Fermer menu mobile
+      document.getElementById('navList').classList.remove('open');
+    };
+  });
+}
+
+/* =========================================================
+   TABS
+   ========================================================= */
+function initTabs(){
+  const btns = document.querySelectorAll('.tab-btn');
+  if(!btns.length) return;
+  btns.forEach(btn=>{
+    btn.onclick = ()=>{
+      const tab = btn.dataset.tab;
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-'+tab).classList.add('active');
+    };
+  });
+}
+
+/* =========================================================
+   COMPTEURS ANIMÉS
+   ========================================================= */
+function animateCounters(){
+  const counters = document.querySelectorAll('[data-count]');
+  if(!counters.length) return;
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const el = e.target;
+        const target = parseInt(el.dataset.count);
+        let current = 0;
+        const step = Math.max(1,Math.ceil(target/60));
+        const timer = setInterval(()=>{
+          current += step;
+          if(current>=target){current=target;clearInterval(timer)}
+          el.textContent = current.toLocaleString('fr-FR');
+        },25);
+        obs.unobserve(el);
+      }
+    });
+  },{threshold:.3});
+  counters.forEach(c=>obs.observe(c));
+}
+
+/* =========================================================
+   RECHERCHE NOM COOPÉRATIVE
+   ========================================================= */
+function checkCoopName(deptKey){
+  const input = document.getElementById('searchCoopName');
+  const result = document.getElementById('searchResult');
+  if(!input || !result) return;
+  const val = input.value.trim();
+  if(val.length<3){result.classList.remove('show');return}
+  const d = DATA.cooperatives[deptKey];
+  const found = d.cooperatives.find(c=>c.nom.toLowerCase().includes(val.toLowerCase()));
+  result.classList.add('show');
+  if(found){
+    result.className = 'search-result show taken';
+    result.innerHTML = `❌ <strong>Nom indisponible.</strong> Une coopérative enregistrée dans le département de ${d.nom} porte un nom similaire : <em>${found.nom}</em> (${found.commune}, ${found.annee}). Veuillez choisir une autre appellation.`;
+  } else {
+    result.className = 'search-result show available';
+    result.innerHTML = `✓ <strong>Nom disponible.</strong> L'appellation « ${val} » ne figure pas parmi les coopératives enregistrées dans le département de ${d.nom}. Vous pouvez poursuivre votre démarche de création.`;
+  }
+}
+
+/* =========================================================
+   TÉLÉCHARGEMENT SIMULÉ
+   ========================================================= */
+function simulateDownload(filename){
+  alert('📥 Téléchargement simulé : '+filename+'\n\n(Dans un environnement de production, ce bouton déclencherait le téléchargement réel du document PDF depuis le serveur.)');
+}
+
+/* =========================================================
+   FORMULAIRE CONTACT
+   ========================================================= */
+function submitContact(e){
+  e.preventDefault();
+  const msg = document.getElementById('formMsg');
+  msg.classList.add('show');
+  document.getElementById('contactForm').reset();
+  setTimeout(()=>msg.classList.remove('show'),6000);
+  return false;
+}
+
+/* =========================================================
+   MENU MOBILE
+   ========================================================= */
+document.getElementById('menuToggle').onclick = ()=>{
+  document.getElementById('navList').classList.toggle('open');
+};
+// Sous-menus mobile (click)
+document.querySelectorAll('.nav-item').forEach(item=>{
+  const link = item.querySelector('.nav-link');
+  const dd = item.querySelector('.dropdown');
+  if(dd && link){
+    link.addEventListener('click',(e)=>{
+      if(window.innerWidth<=768 && dd){
+        e.preventDefault();
+        item.classList.toggle('open');
+      }
+    });
+  }
+});
+
+/* =========================================================
+   INIT
+   ========================================================= */
+window.addEventListener('DOMContentLoaded',()=>{
+  const hash = location.hash.replace('#','');
+  navigate(pages[hash]?hash:'accueil');
+});
+window.addEventListener('hashchange',()=>{
+  const hash = location.hash.replace('#','');
+  if(pages[hash]) navigate(hash);
+});
+</script>
+</body>
+</html>
